@@ -1,0 +1,75 @@
+<mat-table class="mat-elevation-z8" class="full-width-table" matSort [dataSource]="dataSource">
+
+    <ng-container matColumnDef="idmNumber">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>IDM Number</mat-header-cell>
+        <mat-cell (click)="open(track.id)" *matCellDef="let track">{{track.idmNumber}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="requestedDate">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Requested date</mat-header-cell>
+        <mat-cell class="description-cell"
+                  *matCellDef="let track">{{track.requestedDate}}</mat-cell>
+
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Action</mat-header-cell>
+        <mat-cell class="duration-cell"
+                  *matCellDef="let track">{{track.action}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+        <mat-cell class="duration-cell"
+                  *matCellDef="let track">{{track.name}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="sso">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>SSO</mat-header-cell>
+        <mat-cell class="duration-cell"
+                  *matCellDef="let track">{{track.sso}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="application">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Application</mat-header-cell>
+        <mat-cell class="duration-cell"
+                  *matCellDef="let track">{{track.application}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="environment">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Environment</mat-header-cell>
+        <mat-cell class="duration-cell"
+                  *matCellDef="let track">{{track.environment}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="client">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Client</mat-header-cell>
+        <mat-cell class="duration-cell"
+                  *matCellDef="let track">{{track.client}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="performedBy">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Performed by:</mat-header-cell>
+        <mat-cell class="duration-cell"
+                  *matCellDef="let track">{{track.performedBy}}</mat-cell>
+    </ng-container>
+
+    <!-- <ng-container matColumnDef="executionDate">
+        <mat-header-cell *matHeaderCellDef>Execution date</mat-header-cell>
+        <mat-cell class="duration-cell"
+                  *matCellDef="let track">{{track.executionDate}}</mat-cell>
+    </ng-container> -->
+
+    <!-- <ng-container matColumnDef="comments">
+        <mat-header-cell *matHeaderCellDef>Comments</mat-header-cell>
+        <mat-cell class="duration-cell"
+                  *matCellDef="let track">{{track.comments}}</mat-cell>
+    </ng-container> -->
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+
+</mat-table>
+<mat-paginator #paginator [pageIndex]="0" [pageSize]="12" [pageSizeOptions]="[12]">
+</mat-paginator>
